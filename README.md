@@ -57,7 +57,7 @@ temperatures are computed by the Optris Thermal Camera SDK, which ships with it.
 - An Optris infrared camera (tested with the Xi 400)
 - Nothing else — the parts of the Optris SDK the camera needs ship with Bolometrix. You do not
   install the Optris SDK or PIX Connect.
-- Only for Bolometrix without a window: Microsoft's .NET 8 runtime (or newer); on Linux also
+- Only for Bolometrix without a window: Microsoft's .NET 10 runtime (or newer); on Linux also
   Optris's SDK package for the system (Ubuntu 24.04 x64 or Debian 12 arm64). The Linux builds are
   `Bolometrix-<version>-linux-x64.zip` and `-linux-arm64.zip`; they are built but not yet tried
   on Linux.
