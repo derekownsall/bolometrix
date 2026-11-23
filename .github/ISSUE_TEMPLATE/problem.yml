@@ -1,0 +1,54 @@
+name: Report a problem
+description: Something in Bolometrix does not work as it should.
+title: "[Problem] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time. Everything you write here is public. Bolometrix's logs can name your PC's user folder and your camera's serial number: send those, or anything else you would rather not post, by e-mail to derekholzapfel@gmail.com instead.
+  - type: input
+    id: version
+    attributes:
+      label: Bolometrix version
+      description: Help → About shows it.
+      placeholder: "0.20.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: System
+      options:
+        - Windows 11
+        - Windows 10
+        - Linux (Bolometrix without a window)
+    validations:
+      required: true
+  - type: input
+    id: camera
+    attributes:
+      label: Camera
+      description: Its model, and how it is connected (USB or Ethernet).
+      placeholder: "Xi 400, USB"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to make it happen again
+      placeholder: |
+        1.
+        2.
+        3.
+  - type: textarea
+    id: log
+    attributes:
+      label: Log lines (optional)
+      description: Help → Report a problem opens the log folder. Paste only the lines around the problem, without anything private.
+      render: text
