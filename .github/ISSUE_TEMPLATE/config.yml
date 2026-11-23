@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: User's guide (PDF)
+    url: https://github.com/derekownsall/bolometrix/releases/latest/download/Users-guide.pdf
+    about: Most questions are answered there, step by step with pictures. It is also under Help in the program.
