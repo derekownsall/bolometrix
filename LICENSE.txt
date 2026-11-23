@@ -1,0 +1,32 @@
+BOLOMETRIX - TERMS OF USE
+
+Copyright (c) 2026 Derek Holzapfel. All rights reserved.
+
+Bolometrix is made by Derek Holzapfel. By installing or using Bolometrix you agree to these terms.
+
+1. Free to use. You may install and use Bolometrix free of charge, on as many computers as you
+   like, for any lawful purpose, at work or at home. You may not sell it or pass it off as your
+   own.
+
+2. As it is. Bolometrix is provided as it is, with no warranty of any kind, express or implied:
+   no warranty that it is free of faults, that it suits a particular purpose, or that the
+   temperatures, pictures and values it shows or saves are correct. Check readings that matter
+   against a reference before you rely on them.
+
+3. Not a safety system. Bolometrix's alarms, outputs and messages help you watch a process. They
+   do not replace a safety system, an interlock or a person responsible for the process, and
+   they must not be the only protection against harm to people, equipment or product.
+
+4. No liability. As far as the law allows, Derek Holzapfel accepts no liability for any damage
+   or loss that comes from installing or using Bolometrix, or from not being able to use it,
+   including lost measurements, lost recordings, lost production and damage to equipment.
+
+5. Other people's parts. Bolometrix includes parts made by others: the Optris Thermal Camera SDK
+   by Optris GmbH & Co. KG, and parts by Microsoft and by the WiX Toolset's makers. They remain
+   their makers' property and come under the notices in "Notices.txt" beside the program.
+   Bolometrix is not an Optris product and is not made, sold or supported by Optris.
+
+6. The law. These terms are governed by the laws of the Commonwealth of Kentucky, USA. If a court
+   finds a part of them unenforceable, the rest of these terms still applies.
+
+7. Questions: derekholzapfel@gmail.com
