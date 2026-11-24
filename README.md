@@ -12,6 +12,7 @@
 <p align="center">
   <a href="https://github.com/derekownsall/bolometrix/releases/latest"><img src="https://img.shields.io/badge/Download-for%20Windows-2ea44f?style=for-the-badge" alt="Download for Windows"></a>
   <a href="https://github.com/derekownsall/bolometrix/releases/latest/download/Users-guide.pdf"><img src="https://img.shields.io/badge/User%27s%20guide-PDF-1f6feb?style=for-the-badge" alt="User's guide (PDF)"></a>
+  <a href="https://github.com/derekownsall/bolometrix/releases/tag/presentation-0.21.0"><img src="https://img.shields.io/badge/Presentation-video-8250df?style=for-the-badge" alt="Presentation (video)"></a>
 </p>
 
 <p align="center">
@@ -109,6 +110,7 @@ Every network function is off until you switch it on, and one that listens (web 
 - [For IT departments](https://github.com/derekownsall/bolometrix/releases/latest/download/For-IT-departments.txt): quiet installs, folders, every port.
 - [Terms of use](https://github.com/derekownsall/bolometrix/releases/latest/download/Terms-of-use.txt): also under Help → Terms of use.
 - [Notices](https://github.com/derekownsall/bolometrix/releases/latest/download/Notices.txt): the parts made by others that Bolometrix includes, and their licenses.
+- [Presentation](https://github.com/derekownsall/bolometrix/releases/tag/presentation-0.21.0): Bolometrix 0.21.0 and its phone apps, as a narrated video (about 40 minutes) and as slides to present yourself.
 - What each version brought: the [releases page][releases], and `CHANGELOG.txt` beside the installed program.
 
 </details>
