@@ -44,9 +44,9 @@ Bolometrix turns an Optris infrared camera into a complete thermal measurement s
 
 ## Why you can trust its numbers
 
-- **Tried on a real camera.** Version 0.20.1 was run on an Optris Xi 400 by its own test scripts.
-- **Every calculation checked from outside.** Two validators who never saw the program's code worked out the expected values from the user's guide and published standards, froze them, and then ran the released program: 4,940 results, none of them a wrong temperature, statistic or verdict.
-- **Every connection tested with independent clients**: OPC UA, Modbus TCP, MQTT and the AI link's protocol, and for two hours all at once under load, with malformed input in between.
+- **Tried on a real camera.** Version 0.21.0 was run on an Optris Xi 400 by its own test scripts.
+- **Every calculation checked from outside.** Two validators who never saw the program's code worked out the expected values from the user's guide and published standards, froze them, and then ran the released program (version 0.20.1): 4,940 results, none of them a wrong temperature, statistic or verdict. Each calculation changed since is covered by checks against values worked out apart from the program.
+- **Every connection tested with independent clients**: OPC UA, Modbus TCP, MQTT and the AI link's protocol, and all at once under load, with malformed input in between.
 - **Installers tried on a fresh Windows**: a clean install, an upgrade, removing it, and the quiet `.msi`.
 - **Plain about its limits.** Each release says what was tried, what was not, and what the program cannot do.
 
