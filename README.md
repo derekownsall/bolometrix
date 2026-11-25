@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Temperature measurement and analysis for Optris infrared cameras</b><br>
-  Free for Windows 10 and 11 &middot; without a window also for Linux
+  Free for business use on Windows 10 and 11 &middot; without a window also for Linux
 </p>
 
 <p align="center">
@@ -124,7 +124,7 @@ Questions and problems: **derekholzapfel@gmail.com**. In the program, **Help →
 
 ---
 
-<sub>Bolometrix is free to use and comes as it is, with no warranty. Its alarms and outputs help you watch a process; they are not a safety system. Copyright (c) 2026 Derek Holzapfel. All rights reserved. Optris is a registered trademark of Optris GmbH & Co. KG; Xi is a product name of Optris. QR Code is a registered trademark of DENSO WAVE INCORPORATED. Microsoft, Windows, Excel, Word and .NET are trademarks of the Microsoft group of companies. MATLAB is a registered trademark of The MathWorks, Inc. HDF5 is a trademark of The HDF Group. Modbus is a registered trademark of Schneider Electric USA, Inc. OPC UA is a trademark of the OPC Foundation. Linux is the registered trademark of Linus Torvalds in the U.S. and other countries. Ubuntu is a registered trademark of Canonical Ltd. Debian is a registered trademark of Software in the Public Interest, Inc. Android is a trademark of Google LLC. They are named here only to say what Bolometrix works with.</sub>
+<sub>Bolometrix is free for business use and comes as it is, with no warranty. Its alarms and outputs help you watch a process; they are not a safety system. Copyright (c) 2026 Derek Holzapfel. All rights reserved. Optris is a registered trademark of Optris GmbH & Co. KG; Xi is a product name of Optris. QR Code is a registered trademark of DENSO WAVE INCORPORATED. Microsoft, Windows, Excel, Word and .NET are trademarks of the Microsoft group of companies. MATLAB is a registered trademark of The MathWorks, Inc. HDF5 is a trademark of The HDF Group. Modbus is a registered trademark of Schneider Electric USA, Inc. OPC UA is a trademark of the OPC Foundation. Linux is the registered trademark of Linus Torvalds in the U.S. and other countries. Ubuntu is a registered trademark of Canonical Ltd. Debian is a registered trademark of Software in the Public Interest, Inc. Android is a trademark of Google LLC. They are named here only to say what Bolometrix works with.</sub>
 
 [latest]: https://github.com/derekownsall/bolometrix/releases/latest
 [releases]: https://github.com/derekownsall/bolometrix/releases
