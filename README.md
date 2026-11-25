@@ -60,7 +60,7 @@ Bolometrix turns an Optris infrared camera into a complete thermal measurement s
 2. **Install.** The files carry no digital signature, so Windows warns the first time: choose **More info → Run anyway**, then **Yes** at the administrator question. IT departments can use the `.msi` instead (see `For-IT-departments.txt`).
 3. **Plug in the camera** and open **Bolometrix** from the Start menu. A camera that is there when the program starts is connected by itself; one plugged in later is chosen in the camera list.
 
-To check a download, compare `Get-FileHash -Algorithm SHA256 Bolometrix-<version>-Setup.exe` with the line in `SHA256SUMS.txt`.
+To check a download, compare `Get-FileHash -Algorithm SHA256 Bolometrix-<version>-Setup.exe` with the line in `SHA256SUMS.txt` (signed offline with an ECDSA P-256 key in `SHA256SUMS.txt.sig`, which **Help → Check for a newer version** verifies automatically).
 
 <details>
 <summary><b>Everything it does</b></summary>
