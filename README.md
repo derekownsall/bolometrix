@@ -28,6 +28,9 @@
 
 Bolometrix turns an Optris infrared camera into a complete thermal measurement station: on the line, in the lab, or on a PC without a screen. Made by Derek Holzapfel. **Not an Optris product** — not made, sold or supported by Optris. Its temperatures are worked out by the Optris SDK, which comes with it.
 
+> [!IMPORTANT]
+> **Beta: not yet proven in the field.** Bolometrix is checked by its own tests and by validators who never saw its code, and was run on a real Optris camera, but it has not yet been used on a production line. Windows 10, Linux, a real Android phone, PLCs and the process interface are not yet tried. Try it beside your current measurement before you rely on it. It comes as it is, with no warranty, and its alarms and outputs are not a safety system.
+
 | Measure | Record | Connect |
 |---|---|---|
 | Measure areas of any shape, hot and cold spots, profiles, calculated objects and objects found by temperature, each value with its own alarm, uncertainty and history. | Radiometric recordings you can measure again later, snapshots, line scans of moving products, each shift's record and report, and an alarm journal. | Modbus TCP, OPC UA, MQTT, e-mail, a live web page, a video stream, an AI link and an Android app, each off until you switch it on. |
