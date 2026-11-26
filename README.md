@@ -50,6 +50,7 @@ Bolometrix turns an Optris infrared camera into a complete thermal measurement s
 
 - **Tried on a real camera.** Version 0.21.0 was run on an Optris Xi 400 by its own test scripts.
 - **Every calculation checked from outside.** Two validators who never saw the program's code worked out the expected values from the user's guide and published standards, froze them, and then ran the released program (version 0.20.1): 4,940 results, none of them a wrong temperature, statistic or verdict. Each calculation changed since is covered by checks against values worked out apart from the program.
+- **Engineered for continuous 80–120 Hz operation.** Separated into modular `.NET 10` projects (`SdkBindings`, `Core`, `Protocols`, `App`, `Headless`) wired with dependency injection and MVVM view-models: lock-free reference-counted frame snapshots so UI drawing, web pages and phones never stall camera ingestion; bounded-channel asynchronous recording so slow disks never block live measurement; atomic JSON saves for settings, layouts and recipes; global crash and unobserved-task guards; C# nullable reference types and `.NET 10` Roslyn static analyzers enforced with zero warnings; and 1,864 automated self-checks plus 1,973 external protocol checks, 450 tutorial checks and 204 window/motion checks.
 - **Every connection tested with independent clients**: OPC UA, Modbus TCP, MQTT and the AI link's protocol, and all at once under load, with malformed input in between.
 - **Installers tried on a fresh Windows**: a clean install, an upgrade, removing it, and the quiet `.msi`.
 - **Plain about its limits.** Each release says what was tried, what was not, and what the program cannot do.
@@ -68,7 +69,7 @@ To check a download, compare `Get-FileHash -Algorithm SHA256 Bolometrix-<version
 - **Live measurement**: measure areas (rectangle, ellipse, point, polygon, freehand, profiles), hot and cold spot tracking, calculated objects, per-area emissivity and emissivity regions, objects found by temperature, and lengths and sizes in millimetres from the distance and the field of view.
 - **Values you can trust**: the uncertainty of each value from Optris's stated accuracy, user calibration at several points (every corrected value marked "corr."), a verification log of readings against a reference, and the camera's health at a glance.
 - **Alarms**: upper and lower limits with pre-alarms, shown in words and colour, that can set off a snapshot, a recording or a process-interface output. Each value keeps its own alarm; an alarm can be shelved for a while with a reason, acknowledging records who and why, and an alarm journal keeps them all. "Limit in about 12 min" when a value heads for its limit, and a rate-of-change object in K per minute.
-- **Left running**: a watchdog that starts the program again when its window stops answering (only when that costs the line nothing), a health page for the whole chain, a guard for the recordings' disk, and a grey "no new picture" when the camera stops sending.
+- **Left running**: a watchdog that starts the program again when its window stops answering (only when that costs the line nothing), lock-free 80–120 Hz frame snapshots, asynchronous bounded-channel recording, atomic JSON saves for settings and layouts, global crash and unobserved-task guards, a health page for the whole chain, a guard for the recordings' disk, and a grey "no new picture" when the camera stops sending.
 - **The shift**: each shift's record and report, saved and e-mailed at its end; a handover with notes, open items and a sign-off; each shift's phones, and an e-mail for an alarm nobody acknowledges.
 - **Parts**: a good part per recipe, and a record per part with each area's difference and a verdict, with an output and Modbus registers for the PLC.
 - **One phone at a time**: a phone takes control before it changes anything, the PC can always take it back, and the status line shows who is watching.
@@ -78,9 +79,9 @@ To check a download, compare `Get-FileHash -Algorithm SHA256 Bolometrix-<version
 - **Line scanning**: a picture of a moving belt, sheet or strip, built line by line.
 - **Merged pictures**: several cameras side by side, shown and measured as one picture.
 - **Dual-range test**: two cameras in different ranges joined into one temperature curve; each test saved with its data, a plot and full metadata.
-- **Interfaces**: the Optris process interface, remote commands over COM and TCP, a live web page with a QR code (it also offers the Android app), a shared live picture, and a phone link.
+- **Interfaces**: the Optris process interface, remote commands over COM and TCP (with browser HTTP drop and an optional `AUTH` password), a live web page with a QR code (it also offers the Android app), a shared live picture, and a phone link (with cross-host browser `Origin` protection).
 - **Connections to other systems**: Modbus TCP and OPC UA servers for PLCs and SCADA, MQTT, e-mail (or text message) on alarms, an RTSP video stream, an AI link (MCP) for assistants, and one overview of several PCs. Each is off until you switch it on, listens only on the PC itself until you choose the network, and changes nothing unless you allow it.
-- **The plant**: a long history (a year of values), process statistics (Pp and Ppk, and Cp and Cpk within the shift), recipes with lot numbers, user roles with an audit trail, and ready starts for common jobs.
+- **The plant**: a long history (a year of values), process statistics (Pp and Ppk, and Cp and Cpk within the shift), recipes with lot numbers, user roles with a formula-guarded CSV audit trail, and ready starts for common jobs.
 - **Tutorial mode**: a card for every tool (what it does, what you gain, how) and 18 short lessons that walk you through tasks on your own live picture, in a coach beside the picture that never covers it.
 - **Reach**: the window in English, German or Spanish; updates and error reports when you switch them on; network cameras found and set up with a guide; autofocus on your word.
 - **Without a window**: Bolometrix for a server or a PC without a screen, on Windows and on Linux (x64 and arm64, with Optris's Linux SDK).
@@ -90,10 +91,10 @@ To check a download, compare `Get-FileHash -Algorithm SHA256 Bolometrix-<version
 <details>
 <summary><b>Requirements</b></summary>
 
-- Windows 10 or 11, 64-bit.
+- Windows 10 or 11, 64-bit (`Bolometrix.exe` is a self-contained single-file program and needs no separate `.NET` install).
 - An Optris infrared camera (tried with the Xi 400 and the Xi 1M).
-- Nothing else: the parts of the Optris SDK the camera needs come with Bolometrix.
-- Only for Bolometrix without a window: Microsoft's .NET 10 runtime (or newer); on Linux also Optris's SDK package for the system (Ubuntu 24.04 x64 or Debian 12 arm64). The Linux builds are `Bolometrix-<version>-linux-x64.zip` and `-linux-arm64.zip`; they are built but not yet tried on Linux.
+- Nothing else: the parts of the Optris SDK 11.4.10 the camera needs come with Bolometrix, along with optional opt-in `Optris.Sdk.dll` (SDK 12.0.15 managed bindings) for PCs with an Optris SDK 12 runtime installed.
+- Only for Bolometrix without a window (`Bolometrix-headless`, shipped alongside its shared `Bolometrix.*.dll` libraries): Microsoft's .NET 10 runtime (or newer); on Linux also Optris's SDK package for the system (Ubuntu 24.04 x64 or Debian 12 arm64). The Linux builds are `Bolometrix-<version>-linux-x64.zip` and `-linux-arm64.zip`; they are built but not yet tried on Linux.
 
 </details>
 
@@ -102,7 +103,7 @@ To check a download, compare `Get-FileHash -Algorithm SHA256 Bolometrix-<version
 
 As it comes, Bolometrix sends nothing over the internet by itself, with one exception: when a camera needs calibration files that are not on the PC, the Optris SDK downloads them from Optris (this can be switched off on the page Camera). When the PC lacks it, `Setup.exe` fetches Microsoft's Visual C++ runtime from Microsoft.
 
-Every network function is off until you switch it on, and one that listens (web page, remote commands, Modbus TCP, OPC UA, the video stream) stays on the PC itself until you choose the network. What you switch on sends only to what you enter: updates to GitHub (at most once a day), MQTT to your broker, e-mail to your mail server, the overview of other PCs to their pages. `For-IT-departments.txt` lists every port.
+Every network function is off until you switch it on, and one that listens (web page, remote commands, Modbus TCP, OPC UA, the video stream, phone link) stays on the PC itself until you choose the network. What you switch on sends only to what you enter: updates to GitHub (at most once a day), MQTT to your broker, e-mail to your mail server, the overview of other PCs to their pages. `For-IT-departments.txt` lists every port.
 
 </details>
 
@@ -110,9 +111,10 @@ Every network function is off until you switch it on, and one that listens (web 
 <summary><b>Documents</b></summary>
 
 - [User's guide (PDF)](https://github.com/derekownsall/bolometrix/releases/latest/download/Users-guide.pdf): step by step, with pictures (also under Help in the program).
-- [For IT departments](https://github.com/derekownsall/bolometrix/releases/latest/download/For-IT-departments.txt): quiet installs, folders, every port.
+- [For IT departments](https://github.com/derekownsall/bolometrix/releases/latest/download/For-IT-departments.txt): quiet installs, folders, shared headless assemblies, every port.
 - [Terms of use](https://github.com/derekownsall/bolometrix/releases/latest/download/Terms-of-use.txt): also under Help → Terms of use.
 - [Notices](https://github.com/derekownsall/bolometrix/releases/latest/download/Notices.txt): the parts made by others that Bolometrix includes, and their licenses.
+- [Third-party notices (.NET)](https://github.com/derekownsall/bolometrix/releases/latest/download/Third-party-notices-NET.txt): the .NET 10 runtime's own notices, word for word.
 - [Presentation](https://github.com/derekownsall/bolometrix/releases/tag/presentation-0.21.0): Bolometrix 0.21.0 and its phone apps, as a narrated video (about 40 minutes) and as slides to present yourself.
 - What each version brought: the [releases page][releases], and `CHANGELOG.txt` beside the installed program.
 
